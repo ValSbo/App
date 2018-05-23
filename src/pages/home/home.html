@@ -1,0 +1,24 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>News</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+    <ion-list>
+      <ion-item *ngFor="let n of notizie" (click)="notizia(n)">
+        <h2>{{ n.titolo }}</h2>
+        <p margin-top>{{ n.testo }}</p>
+        <ion-note item-end>{{ n.data }}</ion-note>
+      </ion-item>
+    </ion-list>
+
+    <ion-fab margin-right margin-bottom right bottom>
+      <button ion-fab color="primary" (click)="aggiungiNotizia()">
+        <ion-icon name="add"></ion-icon>
+      </button>
+    </ion-fab>
+</ion-content>
